@@ -1,17 +1,12 @@
-import os
-
 from data_loader import DataLoader
 from sentence_statistics import SentenceStatistics
 from corpus_cleaner import CorpusCleaner
 from tokenizer import Tokenizer
 from mecab_tokenizer import MecabTokenizer
 
-
 if __name__ == "__main__":
-    path_to_file = os.getenv('HOME') + '/aiffel/sp_tokenizer/data/korean-english-park.train.ko'
-    # 경로는 본인 환경에 맞게, 여기서는 노드의 예시 그대로 가지고옴
-
-
+    path_to_file = r'C:\Users\신유진\workspaces\vscodeprojects\modulabnodes\aiffel\NLP\02_word_dictionary\sp_tokenizer\data\korean-english-park.train.ko'
+    
     # Data Loading
     data_loader = DataLoader(path_to_file)
     raw_data = data_loader.get_data()

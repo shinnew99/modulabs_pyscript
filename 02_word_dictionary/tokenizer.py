@@ -16,3 +16,4 @@ class Tokenizer:
         for idx, word in enumerate(self.tokenizer.word_index):
             print(idx, ":", word)
             if idx > 10: break
+
