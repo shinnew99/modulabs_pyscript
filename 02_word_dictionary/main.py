@@ -5,8 +5,10 @@ from tokenizer import Tokenizer
 from mecab_tokenizer import MecabTokenizer
 
 if __name__ == "__main__":
-    path_to_file = r'C:\Users\신유진\workspaces\vscodeprojects\modulabnodes\aiffel\NLP\02_word_dictionary\sp_tokenizer\data\korean-english-park.train.ko'
-    
+    path_to_file = r'C:\Users\[##UserName]\workspaces\vscodeprojects\modulabnodes\aiffel\NLP\02_word_dictionary\sp_tokenizer\data\korean-english-park.train.ko'
+    # 경로는 본인 환경에 맞게!
+
+
     # Data Loading
     data_loader = DataLoader(path_to_file)
     raw_data = data_loader.get_data()
