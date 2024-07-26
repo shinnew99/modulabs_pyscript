@@ -1,8 +1,11 @@
+import os
+
 from data_loader import DataLoader
 from sentence_statistics import SentenceStatistics
 from corpus_cleaner import CorpusCleaner
 from tokenizer import Tokenizer
 from mecab_tokenizer import MecabTokenizer
+
 
 if __name__ == "__main__":
     path_to_file = os.getenv('HOME') + '/aiffel/sp_tokenizer/data/korean-english-park.train.ko'
