@@ -1,6 +1,6 @@
 # TextCleaner.py
 - pad_punctuations()
-- cleaning_text
+- cleaning_text()
 - main(): 예시 text
 
 # VocabMerger.py
