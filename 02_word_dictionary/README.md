@@ -44,4 +44,4 @@ I might erase 'data' if space not available. <br>
 - print_vocabulary()
 
 # main()
-- 모든 예제 여기로 들어감, 출력 후 결과물 figure.1png
+- 모든 예제 여기로 들어감, 출력 후 결과물 figure.1png, figure.2png
