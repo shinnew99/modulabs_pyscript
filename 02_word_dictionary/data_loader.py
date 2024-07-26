@@ -1,5 +1,7 @@
 import os
 
+
+# 기존 아이펠 경로를 그대로 사용할때는 이 코드 사용하면 됨,
 # class DataLoader:
 #     def __init__(self, path):
 #         self.path = path

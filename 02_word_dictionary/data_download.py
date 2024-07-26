@@ -1,3 +1,5 @@
+# 기존 아이펠 경로를 그대로 사용할때는 이 py 파일 필요없음
+
 import requests
 import tarfile
 import os
