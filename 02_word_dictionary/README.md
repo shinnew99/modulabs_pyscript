@@ -1,20 +1,20 @@
-02_word_dictionary/
-│
-├── data/
-│   ├── korean-english-park.train.ko
-│   ├── korean-english-park.train.tar.gz
-│   └── korean-english-park.train.tar.gz
-│
-├
-│── data_loader.py
-│── sentence_statistics.py
-│── corpus_cleaner.py
-│── tokenizer.py
-│── mecab_tokenizer.py
-├── main.py
-└── README.md
-
-I might erase 'data' if space not available.
+02_word_dictionary/ <br>
+│ <br>
+├── data/ <br>
+│   ├── korean-english-park.train.ko <br>
+│   ├── korean-english-park.train.tar.gz <br>
+│   └── korean-english-park.train.tar.gz <br>
+│<br>
+├<br>
+│── data_loader.py <br>
+│── sentence_statistics.py <br>
+│── corpus_cleaner.py <br>
+│── tokenizer.py <br>
+│── mecab_tokenizer.py <br>
+├── main.py <br>
+└── README.md <br>
+<br>
+I might erase 'data' if space not available. <br>
 
 # data_loader.py
 - get_data()
