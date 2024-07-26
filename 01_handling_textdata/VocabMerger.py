@@ -1,71 +1,59 @@
-import re, collections
+import re
+import collections
 
+class VocabMerger:
+    def __init__(self, vocab, num_merges=5):
+        self.vocab = vocab
+        self.num_merges = num_merges
+        self.token_vocab = []
 
-# 예시 
-vocab = {
-    'l o w '      : 5,
-    'l o w e r '  : 2,
-    'n e w e s t ': 6,
-    'w i d e s t ': 3
-}
+    def get_stats(self):
+        """
+        단어 사전을 불러와 단어는 공백 단위로 쪼개어 문자 list를 만들고 빈도수와 쌍을 이루게 합니다. (symbols)
+        """
+        pairs = collections.defaultdict(int)
+        for word, freq in self.vocab.items():
+            symbols = word.split()
+            for i in range(len(symbols) - 1):
+                pairs[symbols[i], symbols[i + 1]] += freq
+        return pairs
 
-def get_stats(vocab):
-    """ 단어 사전을 불러와 단어는 공백 단위로 쪼개어 문자 list를 만들고 빈도수와 쌍을 이루게 합니다. (symbols) """
-    pairs = collections.defaultdict(int)
-    
-    for word, freq in vocab.items():
-        symbols = word.split()
+    def merge_vocab(self, pair):
+        """
+        문자 쌍(pair)과 단어 리스트(v_in)를 입력받아 각각의 단어에서 등장하는 문자 쌍을 치환합니다. (하나의 글자처럼 취급)
+        """
+        v_out = {}
+        bigram = re.escape(' '.join(pair))
+        p = re.compile(r'(?<!\S)' + bigram + r'(?!\S)')
 
-        for i in range(len(symbols) - 1):             # 모든 symbols를 확인하여 
-            pairs[symbols[i], symbols[i + 1]] += freq  # 문자 쌍의 빈도수를 저장합니다. 
-        
-    return pairs
+        for word in self.vocab:
+            w_out = p.sub(''.join(pair), word)
+            v_out[w_out] = self.vocab[word]
 
-num_merges = 5
+        return v_out, pair[0] + pair[1]
 
-def get_stats(vocab):
-    """
-    단어 사전을 불러와
-    단어는 공백 단위로 쪼개어 문자 list를 만들고
-    빈도수와 쌍을 이루게 합니다. (symbols)
-    """
-    pairs = collections.defaultdict(int)
-    
-    for word, freq in vocab.items():
-        symbols = word.split()
+    def perform_merges(self):
+        for i in range(self.num_merges):
+            print(f">> Step {i + 1}")
 
-        for i in range(len(symbols) - 1):             # 모든 symbols를 확인하여 
-            pairs[symbols[i], symbols[i + 1]] += freq  # 문자 쌍의 빈도수를 저장합니다. 
-        
-    return pairs
+            pairs = self.get_stats()
+            best = max(pairs, key=pairs.get)  # 가장 많은 빈도수를 가진 문자 쌍을 반환합니다.
+            self.vocab, merge_tok = self.merge_vocab(best)
+            print("다음 문자 쌍을 치환:", merge_tok)
+            print("변환된 Vocab:\n", self.vocab, "\n")
 
-def merge_vocab(pair, v_in):
-    """
-    문자 쌍(pair)과 단어 리스트(v_in)를 입력받아
-    각각의 단어에서 등장하는 문자 쌍을 치환합니다.
-    (하나의 글자처럼 취급)
-    """
-    v_out = {}
-    bigram = re.escape(' '.join(pair))
-    p = re.compile(r'(?<!\S)' + bigram + r'(?!\S)')
-    
-    for word in v_in:
-        w_out = p.sub(''.join(pair), word)
-        v_out[w_out] = v_in[word]
-        
-    return v_out, pair[0] + pair[1]
+            self.token_vocab.append(merge_tok)
 
-token_vocab = []
+        print("Merged Vocab:", self.token_vocab)
 
-for i in range(num_merges):
-    print(">> Step {0}".format(i + 1))
-    
-    pairs = get_stats(vocab)
-    best = max(pairs, key=pairs.get)  # 가장 많은 빈도수를 가진 문자 쌍을 반환합니다.
-    vocab, merge_tok = merge_vocab(best, vocab)
-    print("다음 문자 쌍을 치환:", merge_tok)
-    print("변환된 Vocab:\n", vocab, "\n")
-    
-    token_vocab.append(merge_tok)
-    
-print("Merged Vocab:", token_vocab)
+# Usage example
+if __name__ == "__main__":
+    vocab = {
+        'l o w ': 5,
+        'l o w e r ': 2,
+        'n e w e s t ': 6,
+        'w i d e s t ': 3
+    }
+
+    merger = VocabMerger(vocab)
+    merger.perform_merges()
