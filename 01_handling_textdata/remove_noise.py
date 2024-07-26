@@ -1,6 +1,6 @@
 import re
 
-class puntuations:
+class punctuations:
     # 노이즈 유형(1) 문장부호: Hi, ny name is John.
     def pad_punctuation(sentence, punc):
         for p in punc:
