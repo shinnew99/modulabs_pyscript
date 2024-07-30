@@ -1,4 +1,5 @@
-from attention import BahdanauAttention # type: ignore
+# from BahdanauAttentionattention import BahdanauAttention # type: ignore
+from LuongAttention import LuongAttention
 import tensorflow as tf
 
 def main():
