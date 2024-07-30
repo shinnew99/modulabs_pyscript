@@ -1,3 +1,4 @@
 # This file can be empty
 
-from .attention import BahdanauAttention
+# from .BahdanauAttention import BahdanauAttention
+from .LuongAttention import LuongAttention

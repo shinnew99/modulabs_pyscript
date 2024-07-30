@@ -2,13 +2,23 @@ from attention import BahdanauAttention # type: ignore
 import tensorflow as tf
 
 def main():
-    W_size = 100
-    print("Hidden State를 {0}차원으로 Mapping\n".format(W_size))
+    # BahdanauAttention
+    # W_size = 100
+    # print("Hidden State를 {0}차원으로 Mapping\n".format(W_size))
 
-    attention = BahdanauAttention(W_size)
+    # attention = BahdanauAttention(W_size)
 
-    enc_state = tf.random.uniform((1, 10, 512))
-    dec_state = tf.random.uniform((1, 512))
+    # enc_state = tf.random.uniform((1, 10, 512))
+    # dec_state = tf.random.uniform((1, 512))
+
+    # context_vector, attention_weights = attention(enc_state, dec_state)
+
+    # LuongAttention
+    emb_dim = 512
+    attention = LuongAttention(emb_dim)
+
+    enc_state = tf.random.uniform((1, 10, emb_dim))
+    dec_state = tf.random.uniform((1, emb_dim))
 
     context_vector, attention_weights = attention(enc_state, dec_state)
 
