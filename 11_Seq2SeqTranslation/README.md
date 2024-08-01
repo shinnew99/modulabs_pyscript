@@ -7,7 +7,7 @@
 ├── models/ <br>
 │   ├── __init__.py <br>
 │   ├── decoder.py <br>
-├   ├── encoder.py <br>
+│   ├── encoder.py <br>
 │   └── seq2seq.py <br>
 │<br>
 ├── preprocessing/ <br>
