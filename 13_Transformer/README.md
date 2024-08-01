@@ -1,8 +1,7 @@
-13_Transformer/
-│
-│── DotProductTensorVisualizationClass.py
-│── LearningRateScheduleVisualizationClass.py
-│── PositionalEncodingClass.py
-└── README.md
+13_Transformer/ <br>
+│── DotProductTensorVisualizationClass.py <br>
+│── LearningRateScheduleVisualizationClass.py <br>
+│── PositionalEncodingClass.py <br>
+└── README.md <br>
 
 Please run each .py file.
