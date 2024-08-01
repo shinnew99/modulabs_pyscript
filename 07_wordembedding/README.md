@@ -33,7 +33,7 @@ This script contains functions and classes for managing the vocabulary, includin
 <br>
 2. Navigate to the project directory: 
     ```bash
-    cd 07_wordembedding
+    cd 07_wordembedding 
     ```
 <br>
 3. Run the main script:
