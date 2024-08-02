@@ -1,6 +1,6 @@
 import tensorflow as tf
 from multi_head_attention import MultiHeadAttention
-from posewise_feed_forward_net import PoswiseFeedForwardNet
+from poswise_feed_forward_net import PoswiseFeedForwardNet
 
 class DecoderLayer(tf.keras.layers.Layer):
     def __init__(self, d_model, n_heads, d_ff, dropout):
