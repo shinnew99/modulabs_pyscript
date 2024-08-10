@@ -6,7 +6,7 @@ You can check each of the file directory trees in each of the README.md <br>
 ### July 29th 2024 ~ Aug 2nd 2024 <br>
 |Node Chapter|Chapter Title with Link|
 |----|--------|
-|01|Handling Textdata <a>https://github.com/shinnew99/modulabs_pyscript/tree/main/01_handling_textdata</a>|
+|01|<a href="https://github.com/shinnew99/modulabs_pyscript/tree/main/01_handling_textdata">Handling Textdata</a>|
 |02|Word Dictionary <a>https://github.com/shinnew99/modulabs_pyscript/tree/main/02_word_dictionary</a>|
 |07|Word Embedding <a>https://github.com/shinnew99/modulabs_pyscript/tree/main/07_wordembedding</a>|
 |10|Attention <a>https://github.com/shinnew99/modulabs_pyscript/tree/main/10_Attention</a>|
