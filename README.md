@@ -1,5 +1,5 @@
 # Aiffel Node Converting ipynb format to py classes
-After uploading the tech blogs of ModuLabs (#ai, writer: 신유진), I was assigned to convert .ipynb format code into .py separating each function into classes. I worked on "<b> 2023 ver NLP tracks</b>" <br>
+After uploading the tech blogs of <a href= "https://modulabs.co.kr/blog/category/ai/">ModuLabs (#ai, writer: 신유진)</a>, I was assigned to convert .ipynb format code into .py separating each function into classes. I worked on "<b> 2023 ver NLP tracks</b>" <br>
 
 You can check each of the file directory trees in each of the README.md <br>
 
